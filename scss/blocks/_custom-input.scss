@@ -1,0 +1,76 @@
+.custom-input {
+  width: 100%;
+  $root: &;
+
+  &__field {
+    border: 1px solid transparent;
+    border-radius: 100px;
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 23px;
+    outline: none;
+    padding: 17px 20px;
+    transition: border-color $transition-300;
+    width: 100%;
+
+    @include vp-1023 {
+      padding: 15px 20px;
+      font-size: 16px;
+    }
+
+    @include vp-767 {
+      padding: 15px 20px;
+      font-size: 16px;
+      line-height: 20.8px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      border-color: $color-free-speech-blue;
+    }
+
+    &:disabled {
+      background-color: $color-white-smoke;
+      border-color: transparent;
+      color: $color-suva-grey;
+      cursor: not-allowed;
+    }
+
+    &::placeholder {
+      color: $color-suva-grey;
+    }
+  }
+
+  // Текст ошибки под полем. Скрыт по умолчанию, показывается в состоянии --error.
+  &__message {
+    display: none;
+    margin: 8px 0 0 20px;
+    font-size: 14px;
+    line-height: 18.2px;
+    color: $color-red-orange;
+
+    @include vp-767 {
+      margin: 6px 0 0 16px;
+      font-size: 12px;
+      line-height: 15.6px;
+    }
+  }
+
+  // Состояние "ошибка": добавляется модификатором --error (например, JS-валидацией)
+  // либо срабатывает нативно через :user-invalid после взаимодействия с полем.
+  &--error,
+  &:has(#{$root}__field:user-invalid) {
+    #{$root}__field {
+      border-color: $color-red-orange;
+
+      &:hover,
+      &:focus-visible {
+        border-color: $color-red-orange;
+      }
+    }
+
+    #{$root}__message {
+      display: block;
+    }
+  }
+}

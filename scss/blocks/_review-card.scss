@@ -1,0 +1,75 @@
+.review-card {
+  background-color: $color-white-smoke;
+  border-radius: 24px;
+  height: 100%;
+  padding: 28px 32px 44px;
+
+  @include vp-1023 {
+    padding: 28px 32px 32px;
+  }
+
+  @include vp-767 {
+    padding: 24px 16px;
+  }
+
+  &__head {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    margin: 0 0 24px 0;
+
+    @include vp-767 {
+      margin: 0 0 20px 0;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    height: 64px;
+    width: 64px;
+
+    @include vp-767 {
+      height: 48px;
+      width: 48px;
+    }
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.6px;
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 20.8px;
+    }
+  }
+
+  &__pet {
+    font-size: 16px;
+    line-height: 19.2px;
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 16.8px;
+    }
+  }
+
+  &__text {
+    color: rgba($color-night-rider, 0.8);
+    font-size: 18px;
+    line-height: 23.4px;
+    margin: 0;
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 20.8px;
+    }
+  }
+}

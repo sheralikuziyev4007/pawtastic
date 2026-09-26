@@ -1,0 +1,170 @@
+.header {
+  padding: 12px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  transform: translateY(-100%);
+  animation: slideInDown 1s ease-out forwards 1s;
+  $root: &;
+
+  @include vp-767 {
+    padding: 8px 0;
+  }
+
+  &__wrapper {
+    background-color: $color-white;
+    border-radius: 20px;
+    padding: 12px 36px;
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    gap: 30px;
+    align-items: center;
+    margin: 0 60px;
+
+    
+
+    @include vp-1023 {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 24px;
+      margin: 0;
+    }
+
+    @include vp-767 {
+      padding: 14px 12px;
+      margin: 0;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    outline: none;
+    color: $color-free-speech-blue;
+    transition: color $transition-300;
+  }
+
+  &__icon-logo {
+    height: 41px;
+    width: 193px;
+    overflow: hidden;
+
+    @include vp-1023 {
+      width: 170px;
+      height: 36px;
+    }
+
+    @include vp-767 {
+      width: 114px;
+      height: 24px;
+    }
+
+    path[fill="currentColor"]:not(#{$root}__logo-icon-cat):not(#{$root}__logo-icon-dog) {
+      transition: fill $transition-300;
+    }
+  }
+
+  &__logo-icon-cat {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.3s ease 0.3s, opacity 0.3s ease 0.3s;
+  }
+
+  &__logo-icon-dog {
+    transform: translateY(14px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  &__logo:hover {
+    path[fill="currentColor"]:not(#{$root}__logo-icon-cat):not(#{$root}__logo-icon-dog) {
+      fill: $color-light-pink;
+    }
+
+    #{$root}__logo-icon-cat {
+      transform: translateY(14px);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    #{$root}__logo-icon-dog {
+      transform: translateY(0);
+      opacity: 1;
+      transition: transform 0.3s ease 0.3s, opacity 0.3s ease 0.3s;
+    }
+  }
+
+  &__user-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: flex-end;
+
+    @include vp-1023 {
+      gap: 12px;
+    }
+
+    @include vp-767 {
+      gap: 8px;
+    }
+  }
+
+  &__user-item--burger {
+    display: none;
+
+    @include vp-1023 {
+      display: flex;
+    }
+  }
+
+  &__user-link {
+    display: flex;
+    height: 36px;
+    width: 36px;
+    align-items: center;
+    justify-content: center;
+    color: $color-night-rider;
+    transition: color $transition-300;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+
+    @include vp-767 {
+      height: 28px;
+      width: 28px;
+    }
+
+    svg {
+      height: 36px;
+      width: 36px;
+
+      @include vp-767 {
+        height: 28px;
+        width: 28px;
+      }
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: $color-free-speech-blue;
+    }
+
+    &:disabled,
+    &[aria-disabled="true"] {
+      color: $color-suva-grey;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+}
+
+@keyframes slideInDown {
+  100% {
+    transform: translateY(0);
+  }
+}

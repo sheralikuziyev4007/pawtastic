@@ -1,0 +1,125 @@
+.categories {
+  $root: &;
+  position: relative;
+  border-radius: 56px 56px 0 0;
+  background-color: $color-white;
+  overflow: hidden;
+  padding: 103px 0 98px;
+
+  @include vp-1023 {
+    border-radius: 40px 40px 0 0;
+    padding: 80px 0 79px;
+    margin-top: -29px;
+  }
+
+  @include vp-767 {
+    padding: 61px 0 88px;
+    
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    gap: 64px;
+    flex-wrap: wrap;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (max-width: 1560px) {
+      gap: 30px;
+      flex-wrap: nowrap;
+     
+    }
+
+    @include vp-1023 {
+      gap: 30px;
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      margin: 0 -32px;
+      padding: 2px 32px 0;
+      justify-content: flex-start;
+    }
+
+    @include vp-767 {
+      margin: 0 -20px;
+      padding: 2px 20px 0;
+    }
+
+    @include vp-767 {
+      gap: 12px;
+    }
+  }
+
+  &__item {
+    flex-shrink: 0;
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: $color-night-rider;
+    transition: color $transition-300;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-free-speech-blue;
+
+      #{$root}__img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    padding: 5px;
+    border: 2px solid $color-royal-blue;
+    border-radius: 50%;
+
+    @include vp-767 {
+      padding: 3px;
+    }
+  }
+
+  &__img {
+    height: 124px;
+    width: 124px;
+    transition: transform $transition-300;
+    border-radius: 50%;
+
+    @media (max-width: 1280px) {
+      height: 90px;
+      width: 90px;
+    }
+
+    @include vp-1023 {
+      height: 124px;
+      width: 124px;
+    }
+
+    @include vp-767 {
+      height: 91px;
+      width: 91px;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 19.2px;
+    text-align: center;
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 16.8px;
+    }
+  }
+}

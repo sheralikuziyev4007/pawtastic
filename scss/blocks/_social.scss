@@ -1,0 +1,45 @@
+.social {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__link {
+    align-items: center;
+    background-color: $color-free-speech-blue;
+    border-radius: 50%;
+    display: flex;
+    height: 56px;
+    justify-content: center;
+    outline: none;
+    transition: background-color $transition-300;
+    width: 56px;
+
+    @include vp-1023 {
+      height: 48px;
+      width: 48px;
+    }
+
+    @include vp-767 {
+      height: 40px;
+      width: 40px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: $color-free-speech-blue-2;
+    }
+  }
+
+  &__link-icon {
+    height: 24px;
+    width: 24px;
+    display: flex;
+
+    @include vp-767 {
+      height: 20px;
+      width: 20px;
+    }
+  }
+}

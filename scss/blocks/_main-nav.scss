@@ -1,0 +1,47 @@
+.main-nav {
+  display: flex;
+  justify-content: center;
+
+  @include vp-1023 {
+    display: none;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 32px;
+
+    @media (max-width: 1250px) {
+      gap: 15px;
+    }
+  }
+
+  &__item--burger {
+    display: none;
+
+    @include vp-1023 {
+      display: flex;
+    }
+  }
+
+  &__link {
+    display: flex;
+    font-size: 18px;
+    line-height: 21.6px;
+    color: $color-night-rider;
+    transition: color $transition-300;
+    font-weight: 500;
+
+    @media (max-width: 1400px) {
+      font-size: 16px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: $color-free-speech-blue;
+    }
+  }
+}

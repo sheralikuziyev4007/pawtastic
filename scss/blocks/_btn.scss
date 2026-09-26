@@ -1,0 +1,62 @@
+.btn {
+  align-items: center;
+  background-color: $color-free-speech-blue;
+  border: 1px solid transparent;
+  border-radius: 100px;
+  color: $color-white;
+  display: flex;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  justify-content: center;
+  line-height: 24.3px;
+  padding: 16px;
+  transition: background-color $transition-300;
+
+  @include vp-1023 {
+    font-size: 16px;
+    line-height: 21.6px;
+  }
+  @include vp-767 {
+    padding: 13px;
+  }
+
+
+
+  &:hover,
+  &:focus-visible {
+    background-color: $color-free-speech-blue-2;
+  }
+
+  &:disabled,
+  &[aria-disabled="true"],
+  &.btn--disabled {
+    background-color: $color-suva-grey;
+    color: $color-white;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: $color-night-rider;
+    border-color: $color-free-speech-blue;
+    transition: background-color $transition-300;
+
+    &:hover,
+    &:focus-visible {
+      background-color: $color-free-speech-blue-2;
+      border-color: $color-free-speech-blue-2;
+      color: $color-white;
+    }
+
+    &:disabled,
+    &[aria-disabled="true"],
+    &.btn--disabled {
+      background-color: transparent;
+      border-color: $color-suva-grey;
+      color: $color-suva-grey;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+}
