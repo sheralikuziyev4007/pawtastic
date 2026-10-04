@@ -95,22 +95,22 @@
         <nav class="main-nav">
           <ul class="main-nav__list">
             <li class="main-nav__item">
-              <a class="main-nav__link" href="#">Каталог</a>
+              <a class="main-nav__link" href="#catalog">Каталог</a>
             </li>
             <li class="main-nav__item">
-              <a class="main-nav__link" href="#">Гайды</a>
+              <a class="main-nav__link" href="#guides">Гайды</a>
             </li>
             <li class="main-nav__item">
-              <a class="main-nav__link" href="#">Подписка</a>
+              <a class="main-nav__link" href="#subscription">Подписка</a>
             </li>
             <li class="main-nav__item">
-              <a class="main-nav__link" href="#">Страховка</a>
+              <a class="main-nav__link" href="#insurance">Страховка</a>
             </li>
             <li class="main-nav__item">
-              <a class="main-nav__link" href="#">О нас</a>
+              <a class="main-nav__link" href="#about">О нас</a>
             </li>
             <li class="main-nav__item">
-              <a class="main-nav__link" href="#">Контакты</a>
+              <a class="main-nav__link" href="#contacts">Контакты</a>
             </li>
           </ul>
         </nav>
@@ -221,7 +221,7 @@
         </div>
       </div>
     </section>
-    <section class="categories">
+    <section class="categories" id="catalog">
       <div class="container">
         <h2 class="visually-hidden">Категории товаров</h2>
         <div class="categories__wrapper">
@@ -354,7 +354,8 @@
         </div>
       </div>
     </section>
-    <section class="subscribe">
+    <section class="subscribe" id="subscription">
+      <span id="insurance" class="visually-hidden" aria-hidden="true"></span>
       <div class="container">
         <div class="subscribe__wrapper">
           <div class="subscribe__description">
@@ -490,7 +491,7 @@
         </div>
       </div>
     </section>
-    <section class="info-banner">
+    <section class="info-banner" id="about">
       <div class="container">
         <div class="info-banner__wrapper">
           <div class="info-banner__picture">
@@ -588,7 +589,7 @@
         </div>
       </div>
     </section>
-    <section class="help">
+    <section class="help" id="guides">
       <div class="container">
         <div class="help__wrapper">
           <h2 class="help__title">Помощь в выборе</h2>
@@ -627,7 +628,7 @@
       </div>
     </section>
   </main>
-  <footer class="footer">
+  <footer class="footer" id="contacts">
     <div class="container">
       <div class="footer__wrapper">
         <div class="footer__left">
@@ -788,6 +789,8 @@
       </div>
     </div>
   </footer>
+
+  <script src="./script.js"></script>
 </body>
 
 </html>
