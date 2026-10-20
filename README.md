@@ -14,13 +14,15 @@ npm run watch   # пересборка SCSS при изменениях
 Страницу нужно открывать через локальный сервер (Live Server, `npx serve` и т. п.),
 а не двойным кликом по файлу: из `file://` браузер блокирует шрифты и SVG-спрайт.
 
-Готовый `css/style.min.css` лежит в репозитории, поэтому GitHub Pages работает без сборки.
+Готовый `css/style.css` лежит в репозитории, поэтому GitHub Pages работает без сборки.
+Стили правятся только в `scss/`, а `css/` пересобирается командой `npm run build`.
 
 ## Структура
 
 ```
 index.html
-css/        результат сборки (style.css, style.min.css, source map)
+css/        результат сборки: style.css (подключён в index.html), style.min.css;
+            source map создаётся командой `npm run build`
 scss/       исходники: global/ (база) и blocks/ (по одному файлу на компонент)
 js/         компоненты, каждый в отдельном файле
   burger-menu.js        мобильное меню

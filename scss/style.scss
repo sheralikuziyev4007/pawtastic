@@ -26,4 +26,8 @@
 @import "blocks/_help";
 @import "blocks/_social";
 @import "blocks/_footer";
+@import "blocks/_form-status";
 
+/* Accessibility (подключается последним, чтобы перекрывать начальные состояния блоков) */
+/* ------------------------------------ */
+@import "global/_reduced-motion";

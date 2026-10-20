@@ -44,4 +44,30 @@
       color: $color-free-speech-blue;
     }
   }
+
+  // Открытое мобильное меню: класс переключает js/burger-menu.js
+  &--open {
+    @include vp-1023 {
+      display: block;
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      left: 0;
+      z-index: 5;
+      padding: 20px 24px;
+      background-color: $color-white;
+      border-radius: 20px;
+      box-shadow: 0 12px 32px rgba(47, 47, 47, 0.12);
+
+      .main-nav__list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+    }
+
+    @include vp-767 {
+      padding: 16px 12px;
+    }
+  }
 }
