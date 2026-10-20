@@ -1,0 +1,23 @@
+{
+  "name": "pawtastic",
+  "version": "1.0.0",
+  "description": "Pawtastic — адаптивная вёрстка интернет-магазина товаров для домашних питомцев",
+  "private": true,
+  "scripts": {
+    "sass": "sass scss/style.scss css/style.css --style=expanded --source-map --silence-deprecation=import",
+    "sass:min": "sass scss/style.scss css/style.min.css --style=compressed --no-source-map --silence-deprecation=import",
+    "prefix": "postcss css/style.css css/style.min.css --replace --use autoprefixer --no-map",
+    "build": "npm run sass && npm run sass:min && npm run prefix",
+    "watch": "sass --watch scss/style.scss css/style.css --source-map --silence-deprecation=import"
+  },
+  "browserslist": [
+    "defaults",
+    "not dead"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.80.0"
+  }
+}

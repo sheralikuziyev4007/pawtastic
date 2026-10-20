@@ -1,0 +1,37 @@
+// Пользователи с настройкой "уменьшить движение" получают сразу конечное состояние
+// без анимации. Подключается ПОСЛЕ блоков, чтобы перекрывать их начальные состояния.
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+
+  .header,
+  .hero__title-line,
+  .hero__text-line {
+    animation: none;
+    transform: none;
+  }
+
+  .hero__link {
+    animation: none;
+    opacity: 1;
+  }
+
+  .hero__img {
+    animation: none;
+    filter: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero__decor {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}

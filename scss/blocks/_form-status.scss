@@ -1,0 +1,22 @@
+// Сообщение о результате отправки формы (role="status", читается скринридером)
+.form-status {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20.8px;
+  margin: 12px 0 0;
+  min-height: 0;
+  text-align: center;
+
+  &:empty {
+    display: none;
+  }
+
+  &--error {
+    color: $color-red-orange;
+  }
+
+  @include vp-767 {
+    font-size: 14px;
+    line-height: 18.2px;
+  }
+}
