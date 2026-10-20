@@ -11,7 +11,7 @@
   <link rel="preload" href="./fonts/Manrope-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="./fonts/NeueMetanaNextFreePersonal-Sm.woff2" as="font" type="font/woff2"
     crossorigin="anonymous">
-  <link rel="stylesheet" href="./scss/style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <link rel="icon" href="./images/favicon/favicon.svg" type="image/svg+xml">
   <title>Интернет магазин одежды для домашних питомцев - Pawtastic</title>
 </head>
@@ -92,7 +92,7 @@
             </defs>
           </svg>
         </a>
-        <nav class="main-nav">
+        <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
           <ul class="main-nav__list">
             <li class="main-nav__item">
               <a class="main-nav__link" href="#catalog">Каталог</a>
@@ -137,7 +137,8 @@
             </a>
           </li>
           <li class="header__user-item header__user-item--burger">
-            <button class="header__user-link burger" type="button" aria-label="Открыть бургерное меню">
+            <button class="header__user-link burger" type="button" aria-label="Открыть меню" aria-controls="main-nav"
+              aria-expanded="false">
               <svg width="36" height="36" aria-hidden="true">
                 <use href="images/sprite.svg#icon-burger"></use>
               </svg>
@@ -594,7 +595,7 @@
         <div class="help__wrapper">
           <h2 class="help__title">Помощь в выборе</h2>
           <p class="help__text">Мы поможем вам выбрать идеальные товары для вашего питомца</p>
-          <form class="help__form" action="#" method="POST">
+          <form class="help__form" action="#" method="POST" novalidate>
             <div class="help__form-inner">
               <div class="help__custom-input custom-input">
                 <input type="text" id="help-name" class="custom-input__field" name="name" placeholder="ФИО"
@@ -608,7 +609,7 @@
                 <span class="custom-input__message" id="help-phone-error">Обязательное поле</span>
               </div>
             </div>
-            <button class="help__button btn" type="submit" disabled>Отправить</button>
+            <button class="help__button btn" type="submit">Отправить</button>
             <svg class="help__decor" width="2125" height="936" viewBox="0 0 2125 936" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path
@@ -622,6 +623,7 @@
                 stroke="#D1DAFC" stroke-width="200" stroke-linecap="round" />
             </svg>
           </form>
+          <p class="form-status" role="status"></p>
           <p class="help__note">Нажимая на кнопку «Отправить», я соглашаюсь с условиями <a href="#"
               class="help__note-link">Политики конфиденциальности</a></p>
         </div>
@@ -712,12 +714,13 @@
                 required>
               <span class="custom-input__message" id="footer-email-error">Обязательное поле</span>
             </div>
-            <button class="footer__form-button" type="submit" aria-label="Отправить форму" disabled>
+            <button class="footer__form-button" type="submit" aria-label="Отправить форму">
               <svg class="footer__form-button-icon" width="20" height="20" aria-hidden="true">
                 <use href="images/sprite.svg#icon-arrow"></use>
               </svg>
             </button>
           </form>
+          <p class="form-status" role="status"></p>
           <p class="footer__conf">Подписываясь на рассылку, вы соглашаетесь с условиями <a href="#"
               class="footer__conf-link">Политики конфиденциальности</a></p>
         </div>
@@ -784,13 +787,16 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <span class="footer__copyright">© 2024 Pawtastic</span>
+        <span class="footer__copyright">© <span data-current-year>2024</span> Pawtastic</span>
         <a class="footer__bottom-link" href="#">Политика конфиденциальности</a>
       </div>
     </div>
   </footer>
 
-  <script src="./script.js"></script>
+  <script src="./js/burger-menu.js"></script>
+  <script src="./js/form-validation.js"></script>
+  <script src="./js/placeholder-links.js"></script>
+  <script src="./js/current-year.js"></script>
 </body>
 
 </html>
